@@ -9,21 +9,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var indicetor: UIActivityIndicatorView!
     
     // MARK: - LifeCycle Methods
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
 
     // MARK: - Setup Methods
-    
     private func setup() {
         self.baseView.delegate = self
         load(urlString: "https://github.com/daruma302")
     }
     
     // MARK: - Private Methods
-    
     private func load(urlString: String) {
         guard let url = URL(string: urlString) else {
             print("URLが不正")
@@ -39,7 +36,6 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Action Methods
-    
     @IBAction func back(_ sender: Any) {
         self.baseView.webView?.goBack()
     }
@@ -54,7 +50,6 @@ class ViewController: UIViewController {
 }
 
 // MARK: - CostomViewDelegate Methods
-
 extension ViewController: CostomViewDelegate {
     
     /// webView側のデリゲートを受ける
